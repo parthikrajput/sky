@@ -1,0 +1,120 @@
+@import "../../index.scss";
+
+.faq {
+  padding-bottom: 0 !important;
+  h2 {
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto 50px;
+  }
+  .main-tabs {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+    .tab {
+      font-family: $orbitron-font;
+      font-weight: 400;
+      font-size: 20px;
+      line-height: 30px;
+      letter-spacing: 0%;
+      color: $text-color;
+      cursor: pointer;
+      &.active {
+        color: $white-color;
+        font-weight: 600;
+      }
+    }
+  }
+  .faq-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    align-items: start;
+    .faqs {
+      width: 100%;
+      background: #ffffff0f;
+      backdrop-filter: blur(40px);
+      border-radius: 30px;
+      padding: 30px 30px;
+      -webkit-border-radius: 30px;
+      -moz-border-radius: 30px;
+      -ms-border-radius: 30px;
+      -o-border-radius: 30px;
+      cursor: pointer;
+      .faq {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        justify-content: space-between;
+        p {
+          width: 100%;
+          font-family: $orbitron-font;
+          font-weight: 600;
+          font-size: 22px;
+          line-height: 28px;
+          letter-spacing: 0%;
+          color: $white-color;
+        }
+        .faq-icon {
+          transition: transform 0.3s ease-in-out;
+          flex: none;
+          &.open {
+            transform: rotate(180deg);
+          }
+        }
+      }
+      .faq-answer {
+        padding-top: 20px;
+      }
+    }
+  }
+}
+
+@media (max-width: 1100px) {
+  .faq {
+    .faq-content {
+      .faqs {
+        .faq {
+          p {
+            font-size: 20px;
+            line-height: 24px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 860px) {
+  .faq {
+    .faq-content {
+      align-items: stretch;
+      .faqs {
+        padding: 20px;
+      }
+    }
+  }
+}
+@media (max-width: 768px) {
+  .faq {
+    .main-tabs {
+      gap: 20px;
+      justify-content: start;
+      .tab {
+        border: 1px solid #ffffff0f;
+        padding: 10px 30px;
+        border-radius: 30px;
+        -webkit-border-radius: 30px;
+        -moz-border-radius: 30px;
+        -ms-border-radius: 30px;
+        -o-border-radius: 30px;
+      }
+    }
+    .faq-content {
+      grid-template-columns: 1fr;
+    }
+  }
+}
